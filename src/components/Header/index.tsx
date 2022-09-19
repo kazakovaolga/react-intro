@@ -1,4 +1,4 @@
-import React, { Children, useState } from 'react';
+import React from 'react';
 
 type HeaderLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
