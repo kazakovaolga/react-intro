@@ -4,7 +4,7 @@ import Paragraph from './components/Paragraph';
 import Whitespace from './components/Whitespace';
 import Header from './components/Header';
 import Accordion from './components/Accordion';
-// import logo from ''
+import logo from '../assets/emblem.jpg'
 
 
 import * as ReactDOM from 'react-dom/client';
@@ -20,5 +20,5 @@ root.render(<div className='app'>
     <br></br>
     <Accordion text="This is accordion example"></Accordion>
     <br></br>
-    <Emblem src='../assets/emblem.jpg'></Emblem>
+    <Emblem src={logo}></Emblem>
 </div >);
