@@ -17,7 +17,7 @@ const config: webpack.Configuration = {
   output: {
     path: resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    assetModuleFilename: 'images/[name][ext]',
+    // assetModuleFilename: 'images/[name][ext]',
     clean: true,
     environment: {
       arrowFunction: false,
@@ -40,9 +40,9 @@ const config: webpack.Configuration = {
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         type: 'asset/resource',
-        generator: {
-          publicPath: 'assets/',
-        },
+        // generator: {
+        //   publicPath: 'assets/[name][ext]',
+        // },
       },
       {
         test: /\.html$/i,

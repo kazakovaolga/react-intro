@@ -7,10 +7,10 @@
     "test": "jest --coverage \"./src/*\"&& npx loki test",
     "lint": "eslint \"./src/**/*\" && tsc --noEmit",
     "lint:fix": "eslint  \"./src/**/*\" --fix && tsc --noEmit",
-    "build": "webpack --node-env production",
+    "build": "webpack --node-env production && gh-pages -d build",
     "dev": "webpack serve --node-env development",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook && gh-pages -d build",
     "chromatic": "npx chromatic --project-token=487968cdaff9"
   },
   "devDependencies": {
