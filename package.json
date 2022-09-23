@@ -4,13 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "jest --coverage \"./src/*\"&& npx loki test",
+    "test": "jest --coverage \"./src/*\"",
     "lint": "eslint \"./src/**/*\" && tsc --noEmit",
     "lint:fix": "eslint  \"./src/**/*\" --fix && tsc --noEmit",
-    "build": "webpack --node-env production && gh-pages -d build",
+    "build": "webpack --node-env production",
     "dev": "webpack serve --node-env development",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook && gh-pages -d build",
+    "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=487968cdaff9"
   },
   "devDependencies": {
@@ -48,7 +48,8 @@
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.31.7",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.4",
     "file-loader": "^6.2.0",
     "html-loader": "^4.1.0",

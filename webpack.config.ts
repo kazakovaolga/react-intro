@@ -27,16 +27,24 @@ const config: webpack.Configuration = {
   module: {
     rules: [
       {
-        test: /\.(js|ts|tsx)$/,
+        test: /\.(js|ts|tsx|jsx)$/,
         exclude: /(node_modules)/,
         use: {
           loader: 'ts-loader',
         },
       },
       {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
-      },     
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      // {
+      //   test: /\.(css|scss)$/i,
+      //   use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      // },     
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         type: 'asset/resource',
@@ -62,7 +70,7 @@ const config: webpack.Configuration = {
   ],
   mode: NODE_ENV,
   resolve: {
-    extensions: ['.js', '.ts', '.tsx'],
+    extensions: ['.js', '.ts', '.tsx','.jsx'],
   },
   optimization: {
     minimizer: [`...`, new CssMinimizerPlugin()],
