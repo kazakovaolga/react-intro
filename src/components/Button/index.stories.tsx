@@ -1,16 +1,17 @@
-import React from 'react';
-import { ComponentMeta } from '@storybook/react';
+import { ComponentMeta } from "@storybook/react";
 
-import Button from '.';
+import {Button} from ".";
 
 export default {
-  title: 'Example/MyButton',
+  title: "Example/MyButton",
   component: Button,
   parameters: {
     actions: {
-      handles: ['click'],
+      handles: ["click"],
     },
   },
 } as ComponentMeta<typeof Button>;
 
-export const Primary = () => <Button />;
+export const Primary = function() {
+  return <Button />;
+};

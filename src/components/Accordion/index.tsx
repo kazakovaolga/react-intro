@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
+import React,{ useState,FC } from "react";
 
-function Accordion(props:{text:string}) {
+interface AccordionProps{
+    text: string
+};
+
+export const Accordion:FC<AccordionProps> = function({text}) {
+    const header="Accordion Click Me";
     const [visible, setVisible] = useState(true);
 
     function clickHandler() {
@@ -8,25 +13,18 @@ function Accordion(props:{text:string}) {
       }
 
     return (
-        <>
-            <div className='accordion'
+        <div className='accordion'
              onClick={clickHandler}
-             style={{ height: '100px', width: '300px', backgroundColor: 'green' }}
+             style={{ height: "100px", width: "300px", backgroundColor: "green" }}
             >
-                <div data-accordion-header>Accordion Click Me</div>
+                <div data-accordion-header>{header}</div>
                 <div data-accordion-body
-                    onClick={clickHandler}
-                    hidden={visible}
                     data-testid='accordion'
+                    hidden={visible}
+                    onClick={clickHandler}
                 >
-                   {props.text}
+                   {text}
                 </div>
             </div>
-        </>
     );
-}
-
-export default Accordion;
-
-
-
+};

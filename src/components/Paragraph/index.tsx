@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React,{ FC } from "react";
 
-function Paragraph(props:{text:string}) {    
-    
-    return (
-        <>
-            <p
-                className="paragraph"  
-                style={{ height: '50px', width: '200px', backgroundColor: 'pink' }}              
-            >
-                {props.text}
-            </p>
-        </>
-    );
+interface ParagraphProps {
+    text: string
 }
-
-export default Paragraph;
+export const Paragraph: FC<ParagraphProps> = function({ text }) {
+    return (
+        <p
+                className="paragraph"
+                style={{ height: "50px", width: "200px", backgroundColor: "pink" }}
+            >
+                {text}
+            </p>
+    );
+};

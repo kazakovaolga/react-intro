@@ -1,22 +1,17 @@
-import React, { useState } from 'react';
+import React,{ FC } from "react";
 
-function Whitespace() {
+export const Whitespace: FC = function() {
     const hrStyle = {
         border: 0,
-        borderBottom: '2px dashed #999',
-        background: '#000'
+        borderBottom: "2px dashed #999",
+        background: "#000"
     };
 
     return (
-        <>
-            <hr
-                className="hr"
-                data-testid='whitespace'
-                style={hrStyle}
-            >
-            </hr>
-        </>
+        <hr
+            className="hr"
+            data-testid='whitespace'
+            style={hrStyle}
+        />
     );
-}
-
-export default Whitespace;
+};

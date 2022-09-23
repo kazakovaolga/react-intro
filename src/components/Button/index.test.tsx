@@ -1,18 +1,13 @@
-import React from 'react';
-import '@testing-library/jest-dom';
-import userEvent from '@testing-library/user-event';
-import { render, screen } from '@testing-library/react';
+import "@testing-library/jest-dom";
+import userEvent from "@testing-library/user-event";
+import { render, screen } from "@testing-library/react";
+import React from "react";
+import { Button } from ".";
 
-import Button from '.';
-
-test('should render Button', async () => {  
-  render(<Button />); 
-
+test("should render Button", async () => {
+  render(<Button />);
   const button = screen.getByText(/[0]/);
   expect(button).toBeInTheDocument();
-  
   userEvent.click(button);
-
-  expect(await screen.findByText('1')).toBeInTheDocument();
-  
+  expect(await screen.findByText("1")).toBeInTheDocument();
 });

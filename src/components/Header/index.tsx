@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { FC } from "react";
 
-type HeaderLevel = 1 | 2 | 3 | 4 | 5 | 6;
-
-function Header(props: { text: string; level: HeaderLevel }) {
-    const Tag = 'h' + props.level as `h${HeaderLevel}`;
-    return (<><Tag style={{ height: '30px', width: '300px', backgroundColor: 'yellow' }}>{props.text}</Tag></>);
+interface HeaderProps {
+    text: string,
+    level: 1 | 2 | 3 | 4 | 5 | 6
 }
 
-export default Header;
+export const Header: FC<HeaderProps> = function({ text, level }) {
+    const Tag = "h" + level as `h${typeof level}`;
+    return (<Tag style={{height: "30px", width: "300px", backgroundColor: "yellow" }}>{text}</Tag>);
+};

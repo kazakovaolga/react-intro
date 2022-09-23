@@ -1,13 +1,13 @@
-import React from 'react';
-import { ComponentMeta } from '@storybook/react';
-
-import Paragraph from '.';
+import { ComponentMeta } from "@storybook/react";
+import {Paragraph} from ".";
 
 export default {
-  title: 'Example/MyParagraph',
+  title: "Example/MyParagraph",
   component: Paragraph
 } as ComponentMeta<typeof Paragraph>;
 
-const text='Hello';
+const text="Hello";
 
-export const Primary = () => <Paragraph text={text}></Paragraph>;
+export const Primary = function() {
+  return <Paragraph text={text} />;
+};

@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState,FC } from "react";
 
-function Emblem(props:{src:string}) {
-    const [width, setWidth] = useState('200px');
-    const [height, setHeight] = useState('200px');
+interface EmblemProps {
+    src:string
+}
+
+export const Emblem:FC<EmblemProps> = function({src}) {
+    const [width, setWidth] = useState("200px");
+    const [height, setHeight] = useState("200px");
 
     function clickHandler() {
-        setWidth('400px');
-        setHeight('400px');
+        setWidth("400px");
+        setHeight("400px");
       }
 
     return (
-        <>
-            <img className="emblem"
-            onClick={clickHandler}
-             width={width} height={height}
-                src={props.src} />
-        </>
+        <img className="emblem"
+            height={height}
+             onClick={clickHandler} src={src}
+                width={width} />
     );
-}
-
-export default Emblem;
+};
